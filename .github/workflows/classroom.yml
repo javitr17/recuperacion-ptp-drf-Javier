@@ -1,0 +1,90 @@
+name: GitHub Classroom Workflow
+
+on:
+  - push
+  - workflow_dispatch
+
+env:
+  DJANGO_SETTINGS_MODULE: "config.settings.local"
+  COMPOSE_FILE: "local.yml"
+
+permissions:
+  checks: write
+  actions: read
+  contents: write
+
+jobs:
+  build:
+    name: Autograding
+    runs-on: ubuntu-latest
+#    strategy:
+#      matrix:
+#        python-version: [ 3.8 ]
+    if: github.actor != 'github-classroom[bot]'
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v1
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install dependencies
+        run: |
+          sha512sum -c .github/.check
+          if [ "$?" -ne "0"  ]; then exit 1; fi
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          if [ -f .github/tests/requirements.txt ]; then pip install -r .github/tests/requirements.txt; fi
+          docker compose up -d
+
+      - uses: education/autograding@v1
+        id: autograder
+        continue-on-error: true
+
+            # make dir for badges
+      - name: badges branch and make dir
+        run: |
+          git checkout badges || git checkout -b badges
+          mkdir -p .github/badges
+
+      # make points badge
+      - name: points badge
+        uses: emibcn/badge-action@v2.0.2
+        with:
+          LABEL: 'Calificacion'
+          STATUS: ${{ steps.autograder.outputs.Points }}
+          COLOR: cyan
+          path: '.github/badges/points.svg'
+
+      - name: Delete branch
+        uses: dawidd6/action-delete-branch@v3
+        with:
+         github_token: ${{github.token}}
+         soft_fail: true
+         branches: badges
+
+      # commit and push badge if score has changed
+      - name: Commit badge
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add '.github/badges/points.svg'
+          git commit -m "Add/Update badge"
+        continue-on-error: true
+
+      - name: Push badge commit
+        uses: ad-m/github-push-action@v0.6.0
+        if: ${{ success() }}
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: badges
+
+      # fail job if autograder returns failed
+      # outcome can be 'success', 'failure', 'cancelled', or 'skipped'
+      # trigger fail either on !success or on failure depending on preference
+      - name: check autograder pass fail
+        if: ${{ steps.autograder.outcome != 'success' }}
+        # if: ${{ steps.autograder.outcome == 'failure' }}
+        # if: ${{ failure }}
+        run: exit 1

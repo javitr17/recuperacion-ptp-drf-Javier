@@ -1,0 +1,7 @@
+Django
+pytest
+pytest-django
+pytest-drf
+hypothesis
+pytz
+lorem-text

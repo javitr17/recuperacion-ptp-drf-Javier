@@ -1,0 +1,26 @@
+name: Anticheat
+
+on:
+  - push
+  - workflow_dispatch
+
+permissions:
+  checks: write
+  actions: read
+  contents: read
+
+jobs:
+  build:
+    name: Integrity Check
+    runs-on: ubuntu-latest
+#    strategy:
+#      matrix:
+#        python-version: [ 3.8 ]
+    if: github.actor != 'github-classroom[bot]'
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          sha512sum -c .github/.check
+          if [ "$?" -ne "0"  ]; then exit 1; fi

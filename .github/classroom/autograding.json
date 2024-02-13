@@ -1,0 +1,414 @@
+{
+  "tests": [
+    {
+      "name": "Model Post",
+      "setup": "",
+      "run": "pytest .github/tests/test_model_post.py::test_field_definition",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 2.5
+    },
+    {
+      "name": "Model Post nombre plural",
+      "setup": "",
+      "run": "pytest .github/tests/test_model_post.py::test_verbose_name_plural",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 2.5
+    },
+    {
+      "name": "Model Post Implementación en BD",
+      "setup": "",
+      "run": "pytest .github/tests/test_model_post.py::test_bd_impl",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 2.5
+    },
+    {
+      "name": "Model Post representacion en cadena",
+      "setup": "",
+      "run": "pytest .github/tests/test_model_post.py::test_str",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 2.5
+    },
+    {
+      "name": "Model Valoracion",
+      "setup": "",
+      "run": "pytest .github/tests/test_model_valoracion.py::test_field_definition",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 2.5
+    },
+    {
+      "name": "Model Valoracion nombre plural",
+      "setup": "",
+      "run": "pytest .github/tests/test_model_valoracion.py::test_verbose_name_plural",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 2.5
+    },
+    {
+      "name": "Model Valoracion Implementación en BD",
+      "setup": "",
+      "run": "pytest .github/tests/test_model_valoracion.py::test_bd_impl",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 2.5
+    },
+    {
+      "name": "Model Valoracion representacion en cadena",
+      "setup": "",
+      "run": "pytest .github/tests/test_model_valoracion.py::test_str",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 2.5
+    },
+    {
+      "name": "CRUD Post - serializador campos básicos",
+      "setup": "",
+      "run": "pytest .github/tests/test_crud_post_serializer.py::test_serializer_fields",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 2
+    },
+    {
+      "name": "CRUD Post - serializador hyperlinks",
+      "setup": "",
+      "run": "pytest .github/tests/test_crud_post_serializer.py::test_serializer_hyperlinked",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 4
+    },
+    {
+      "name": "CRUD Post - serializador Pk Related_field",
+      "setup": "",
+      "run": "pytest .github/tests/test_crud_post_serializer.py::test_serializer_pk_related_field",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 2
+    },
+    {
+      "name": "CRUD Post ViewSet- Test List",
+      "setup": "",
+      "run": "pytest .github/tests/test_crud_post_viewset.py::TestPostViewSet::TestList",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 2
+    },
+    {
+      "name": "CRUD Post ViewSet- Test Create Admin",
+      "setup": "",
+      "run": "pytest .github/tests/test_crud_post_viewset.py::TestPostViewSet::TestCreateAdmin",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 2
+    },
+    {
+      "name": "CRUD Post ViewSet- Test Create User",
+      "setup": "",
+      "run": "pytest .github/tests/test_crud_post_viewset.py::TestPostViewSet::TestCreateUser",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 2
+    },
+    {
+      "name": "CRUD Post ViewSet- Test Create Public Forbidden",
+      "setup": "",
+      "run": "pytest .github/tests/test_crud_post_viewset.py::TestPostViewSet::TestCreatePublicForbidden",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 4
+    },
+    {
+      "name": "CRUD Post ViewSet- Test Retrieve Public",
+      "setup": "",
+      "run": "pytest .github/tests/test_crud_post_viewset.py::TestPostViewSet::TestRetrievePublic",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 2
+    },
+    {
+      "name": "CRUD Post ViewSet- Test Update Admin",
+      "setup": "",
+      "run": "pytest .github/tests/test_crud_post_viewset.py::TestPostViewSet::TestUpdateAdmin",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 2
+    },
+    {
+      "name": "CRUD Post ViewSet- Test Update Owner",
+      "setup": "",
+      "run": "pytest .github/tests/test_crud_post_viewset.py::TestPostViewSet::TestUpdateOwner",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 2
+    },
+    {
+      "name": "CRUD Post ViewSet- Test Update Public Forbidden",
+      "setup": "",
+      "run": "pytest .github/tests/test_crud_post_viewset.py::TestPostViewSet::TestUpdatePublicForbidden",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 2
+    },
+    {
+      "name": "CRUD Post ViewSet- Test Update No Owner Forbidden",
+      "setup": "",
+      "run": "pytest .github/tests/test_crud_post_viewset.py::TestPostViewSet::TestUpdateNoOwnerForbidden",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 4
+    },
+    {
+      "name": "CRUD Post ViewSet- Test Destroy Admin",
+      "setup": "",
+      "run": "pytest .github/tests/test_crud_post_viewset.py::TestPostViewSet::TestDestroyAdmin",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 2
+    },
+    {
+      "name": "CRUD Post ViewSet- Test Destroy Owner",
+      "setup": "",
+      "run": "pytest .github/tests/test_crud_post_viewset.py::TestPostViewSet::TestDestroyOwner",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 2
+    },
+    {
+      "name": "CRUD Post ViewSet- Test Destroy Public Forbidden",
+      "setup": "",
+      "run": "pytest .github/tests/test_crud_post_viewset.py::TestPostViewSet::TestDestroyPublicForbidden",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 4
+    },
+    {
+      "name": "CRUD Post ViewSet- Test Destroy No Owner Forbidden",
+      "setup": "",
+      "run": "pytest .github/tests/test_crud_post_viewset.py::TestPostViewSet::TestDestroyNoOwnerForbidden",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 2
+    },
+    {
+      "name": "CRUD Valoracion - serializador campos básicos",
+      "setup": "",
+      "run": "pytest .github/tests/test_crud_valoracion_serializer.py::test_serializer_commom_fields",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 2
+    },
+    {
+      "name": "CRUD Valoracion - serializador hyperlinks",
+      "setup": "",
+      "run": "pytest .github/tests/test_crud_valoracion_serializer.py::test_serializer_hyperlinks",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 4
+    },
+    {
+      "name": "CRUD Valoracion - serializador Pk Related_field",
+      "setup": "",
+      "run": "pytest .github/tests/test_crud_valoracion_serializer.py::test_serializer_pk_related_field",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 2
+    },
+    {
+      "name": "CRUD Valoracion ViewSet- Test List",
+      "setup": "",
+      "run": "pytest .github/tests/test_crud_valoracion_viewset.py::TestValoracionViewSet::TestList",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "CRUD Valoracion ViewSet- Test Create Admin",
+      "setup": "",
+      "run": "pytest .github/tests/test_crud_valoracion_viewset.py::TestValoracionViewSet::TestCreateAdmin",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 2
+    },
+    {
+      "name": "CRUD Valoracion ViewSet- Test Create User",
+      "setup": "",
+      "run": "pytest .github/tests/test_crud_valoracion_viewset.py::TestValoracionViewSet::TestCreateUser",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 2
+    },
+    {
+      "name": "CRUD Valoracion ViewSet- Test Create Public Forbidden",
+      "setup": "",
+      "run": "pytest .github/tests/test_crud_valoracion_viewset.py::TestValoracionViewSet::TestCreatePublicForbidden",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 2
+    },
+    {
+      "name": "CRUD Valoracion ViewSet- Test Retrieve Public",
+      "setup": "",
+      "run": "pytest .github/tests/test_crud_valoracion_viewset.py::TestValoracionViewSet::TestRetrievePublic",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "CRUD Valoracion ViewSet- Test Update Admin",
+      "setup": "",
+      "run": "pytest .github/tests/test_crud_valoracion_viewset.py::TestValoracionViewSet::TestUpdateAdmin",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 2
+    },
+    {
+      "name": "CRUD Valoracion ViewSet- Test Update Owner",
+      "setup": "",
+      "run": "pytest .github/tests/test_crud_valoracion_viewset.py::TestValoracionViewSet::TestUpdateOwner",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 2
+    },
+    {
+      "name": "CRUD Valoracion ViewSet- Test Update Public Forbidden",
+      "setup": "",
+      "run": "pytest .github/tests/test_crud_valoracion_viewset.py::TestValoracionViewSet::TestUpdatePublicForbidden",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "CRUD Valoracion ViewSet- Test Update No Owner Forbidden",
+      "setup": "",
+      "run": "pytest .github/tests/test_crud_valoracion_viewset.py::TestValoracionViewSet::TestUpdateNoOwnerForbidden",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 2
+    },
+    {
+      "name": "CRUD Valoracion ViewSet- Test Destroy Admin",
+      "setup": "",
+      "run": "pytest .github/tests/test_crud_valoracion_viewset.py::TestValoracionViewSet::TestDestroyAdmin",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "CRUD Valoracion ViewSet- Test Destroy Owner",
+      "setup": "",
+      "run": "pytest .github/tests/test_crud_valoracion_viewset.py::TestValoracionViewSet::TestDestroyOwner",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "CRUD Valoracion ViewSet- Test Destroy Public Forbidden",
+      "setup": "",
+      "run": "pytest .github/tests/test_crud_valoracion_viewset.py::TestValoracionViewSet::TestDestroyPublicForbidden",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 2
+    },
+    {
+      "name": "CRUD Valoracion ViewSet- Test Destroy No Owner Forbidden",
+      "setup": "",
+      "run": "pytest .github/tests/test_crud_valoracion_viewset.py::TestValoracionViewSet::TestDestroyNoOwnerForbidden",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 12
+    },
+    {
+      "name": "CRUD Valoracion ViewSet- Ordenacion por fecha de registro",
+      "setup": "",
+      "run": "pytest .github/tests/test_crud_valoracion_viewset.py::TestValoracionViewSet::TestOrdenacionFechaRegistro",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 1
+    }
+  ]
+}
